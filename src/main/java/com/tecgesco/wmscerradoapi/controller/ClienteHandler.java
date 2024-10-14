@@ -19,13 +19,6 @@ public class ClienteHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	Cliente cliente = new Cliente();
-	ClienteDao clienteDao = new ClienteDao();
-
-	public ClienteHandler() {
-
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		App.context = request.getServletContext();
@@ -33,6 +26,7 @@ public class ClienteHandler extends HttpServlet {
 
 		String cnpj = request.getParameter("cnpj");
 
+		ClienteDao clienteDao = new ClienteDao();
 		Cliente cliente = clienteDao.getByCnpj(cnpj);
 		String resultado = cliente.toJson();
 

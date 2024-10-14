@@ -19,8 +19,6 @@ import com.tecgesco.wmscerradoapi.model.Carga;
 public class ListarCargasFinalizadasHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	Carga carga = new Carga();
-	CargaDao cargaDao = new CargaDao();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -30,6 +28,8 @@ public class ListarCargasFinalizadasHandler extends HttpServlet {
 		String datainicial = request.getParameter("datainicial");
 		String datafinal = request.getParameter("datafinal");
 
+		Carga carga = new Carga();
+		CargaDao cargaDao = new CargaDao();
 		ArrayList<Carga> lista = cargaDao.getBySituacaoData(1, datainicial, datafinal);
 
 		String resultado = carga.listToJson(lista);

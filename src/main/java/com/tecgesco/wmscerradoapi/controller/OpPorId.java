@@ -18,13 +18,22 @@ import com.tecgesco.wmscerradoapi.model.OrdemProducao;
 @WebServlet(urlPatterns = { "/op" })
 public class OpPorId extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	Tools ts = new Tools();
 	String id;
 	String resposta;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		App.context = request.getServletContext();
+		String contextName = request.getContextPath();
+		String absolutePath = request.getServletContext().getRealPath("/");
+
+		System.out.println("Nome do Contexto: " + contextName.replace("/", ""));
+		System.out.println("Caminho Absoluto: " + absolutePath);
+		System.out.println("Context: " + contextName + "\nPath: " + absolutePath);
+
 		OrdemProducao pcp = new OrdemProducao();
 		OrdemProducaoDao pcpDao = new OrdemProducaoDao();
 
@@ -36,7 +45,6 @@ public class OpPorId extends HttpServlet {
 
 			if (pcp != null) {
 				String resposta = pcp.toJson();
-				System.out.println(resposta);
 
 				response.setContentType("application/json; charset=UTF-8");
 				response.setStatus(HttpServletResponse.SC_OK);

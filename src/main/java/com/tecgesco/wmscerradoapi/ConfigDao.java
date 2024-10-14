@@ -40,10 +40,10 @@ public class ConfigDao {
 	public String lerConfig(String param) {
 
 		App.pathconfigfile = App.context.getRealPath("/WEB-INF/config.properties");
-		System.out.println("App.pathconfigfile.:" + App.pathconfigfile);
+		// System.out.println("App.pathconfigfile.:" + App.pathconfigfile);
 
 		File configFile = new File(App.pathconfigfile);
-		System.out.println("arquivo.:" + configFile.getAbsolutePath());
+		// System.out.println("arquivo.:" + configFile.getAbsolutePath());
 
 		try (InputStream input = new FileInputStream(configFile)) {
 

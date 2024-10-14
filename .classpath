@@ -13,8 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="src/main/webapp/lib/connector-api-1.5.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/lib/jaybird-3.0.5.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/connector-api-1.5.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jaybird-3.0.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>

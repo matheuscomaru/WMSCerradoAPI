@@ -21,10 +21,6 @@ public class ListarCargasFaturadasHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	Carga carga = new Carga();
-	CargaDao cargaDao = new CargaDao();
-	Tools ts = new Tools();
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		App.context = request.getServletContext();
@@ -33,6 +29,9 @@ public class ListarCargasFaturadasHandler extends HttpServlet {
 		String datainicial = request.getParameter("datainicial");
 		String datafinal = request.getParameter("datafinal");
 
+		Carga carga = new Carga();
+		CargaDao cargaDao = new CargaDao();
+		Tools ts = new Tools();
 		ArrayList<Carga> lista = cargaDao.getBySituacaoData(0, datainicial, datafinal);
 
 		String resultado = carga.listToJson(lista);

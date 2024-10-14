@@ -20,9 +20,6 @@ public class ListarCargasCanceladasHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	Carga carga = new Carga();
-	CargaDao cargaDao = new CargaDao();
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		App.context = request.getServletContext();
@@ -31,8 +28,9 @@ public class ListarCargasCanceladasHandler extends HttpServlet {
 		String datainicial = request.getParameter("datainicial");
 		String datafinal = request.getParameter("datafinal");
 
+		Carga carga = new Carga();
+		CargaDao cargaDao = new CargaDao();
 		ArrayList<Carga> lista = cargaDao.getBySituacaoData(2, datainicial, datafinal);
-
 		String resultado = carga.listToJson(lista);
 
 		try (OutputStream os = response.getOutputStream()) {

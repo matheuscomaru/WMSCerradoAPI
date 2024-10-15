@@ -4,18 +4,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.tecgesco.wmscerradoapi.App;
 import com.tecgesco.wmscerradoapi.dao.CargaDao;
 import com.tecgesco.wmscerradoapi.model.Carga;
 
-@WebServlet(urlPatterns = { "/checkout" })
+@WebServlet(urlPatterns = { "/listarcargascanceladas" })
 public class ListarCargasCanceladasHandler extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

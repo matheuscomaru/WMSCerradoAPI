@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 
 public class App {
 
-	public static String versao = "1.0.1";
+	public static String versao = "1.0.2";
 	public static String pathconfigfile = "";
 	public static ServletContext context;
 

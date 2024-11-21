@@ -17,7 +17,7 @@ public class ProdutoDao {
 
 		ArrayList<Produto> lista = new ArrayList<>();
 
-		String sql = "SELECT * FROM PRODUTO WHERE ATIVO=1 AND STATUS = 0 AND TIPO IN (0,4)";
+		String sql = "SELECT * FROM PRODUTO WHERE ATIVO=1 AND STATUS = 0 AND TIPO IN (0,4) AND CODBARRAS <> ''";
 
 		try (Connection conexao = ModuloConexao.conector();
 				PreparedStatement pst = conexao.prepareStatement(sql);

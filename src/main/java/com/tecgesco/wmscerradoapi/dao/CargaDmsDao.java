@@ -9,19 +9,17 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import com.tecgesco.wmscerradoapi.ModuloConexao;
-import com.tecgesco.wmscerradoapi.model.Carga;
+import com.tecgesco.wmscerradoapi.model.CargaDms;
 import com.tecgesco.wmscerradoapi.model.Route;
-import com.tecgesco.wmscerradoapi.model.Vehicle;
 
-public class CargaDao {
+public class CargaDmsDao {
 
-	public ArrayList<Carga> getBySituacaoData(int situacao, String dataInicial, String dataFinal) {
+	public ArrayList<CargaDms> getByData(String dataInicial, String dataFinal) {
 
-		ArrayList<Carga> lista = new ArrayList<>();
+		ArrayList<CargaDms> lista = new ArrayList<>();
 
 		// @formatter:off
-		String sql = "SELECT * FROM (\r\n"
-				+ "SELECT MOTO.CODIGO AS CODMOTO, MOTO.APELIDO, TMS.CODIGO AS CARGA ,\r\n"
+		String sql = "SELECT TMS.CODIGO AS CARGA , TMS.CHAVEEMPRESA,\r\n"
 				+ "COALESCE((SELECT FIRST 1 DISTINCT(ROTA.CODIGO)\r\n"
 				+ "FROM PEDIDOSAIDA PS \r\n"
 				+ "JOIN CLIFOR CL ON CL.CHAVE = PS.CHAVECLIFOR \r\n"
@@ -33,51 +31,34 @@ public class CargaDao {
 				+ "JOIN CLIFOR CL ON CL.CHAVE = PS.CHAVECLIFOR \r\n"
 				+ "JOIN CIDADEROTA CIDROT ON CIDROT.CHAVECIDADE = CL.CHAVECIDADE \r\n"
 				+ "JOIN ROTA ON CIDROT.CHAVEROTA = ROTA.CHAVE\r\n"
-				+ "WHERE PS.CHAVELOTEPEDSAIDA = LOT.CHAVE ),'SEM ROTA') AS NOMEROTA,\r\n"
-				+ "VEIC.PLACA AS CODVEICULO, VEIC.VEICULO, TMS.OBS,\r\n"
-				+ "(SELECT COUNT(*) FROM PEDIDOSAIDA PS\r\n"
-				+ "WHERE PS.CHAVELOTEPEDSAIDA = LOT.CHAVE\r\n"
-				+ "AND PS.ATIVO = 1) AS QTDEPED,\r\n"
-				+ "(SELECT COUNT(NF.CHAVE) FROM PEDIDOSAIDA PS\r\n"
-				+ "JOIN NFSAIDA NF ON PS.CHAVE = NF.CHAVEPEDIDO\r\n"
-				+ "WHERE PS.CHAVELOTEPEDSAIDA = LOT.CHAVE\r\n"
-				+ "AND PS.ATIVO = 1 AND NF.ATIVO = 1 AND NF.STATUS = 1) AS QTDENOT\r\n"
+				+ "WHERE PS.CHAVELOTEPEDSAIDA = LOT.CHAVE ),'SEM ROTA') AS NOMEROTA, COALESCE(TMS.OBS,'') AS OBS\r\n"
 				+ "FROM LOTEPEDSAIDA LOT\r\n"
 				+ "JOIN TMSFRETES TMS ON TMS.CODIGO = LOT.LOTE\r\n"
-				+ "JOIN TMSMOTORISTA MOTO ON MOTO.CHAVE = TMS.CHAVEMOTORISTA \r\n"
-				+ "JOIN TMSVEICULOS VEIC ON VEIC.CHAVE = TMS.CHAVEVEICULO \r\n"
 				+ "WHERE LOT.ATIVO = 1 AND TMS.ATIVO = 1\r\n"
-				+ "AND TMS.SITUACAO = ?\r\n"
-				+ "AND TMS.DATASAIDA BETWEEN ? AND ?\r\n"
-				+ "AND TMS.CODIGO <> ''"
-				+ "AND LOT.CHAVEEMPRESA = TMS.CHAVEEMPRESA \r\n"
-				+ "ORDER BY TMS.CODIGO)\r\n"
-				+ "WHERE QTDEPED = QTDENOT";
+				+ "AND TMS.SITUACAO = 0 AND LOT.CHAVEEMPRESA = TMS.CHAVEEMPRESA \r\n"
+				+ "AND TMS.EMISSAO BETWEEN ? AND ?\r\n"
+				+ "AND TMS.CODIGO <> ''\r\n"
+				+ "ORDER BY TMS.CODIGO";
 		// @formatter:on
+
 		try (Connection conexao = ModuloConexao.conector(); PreparedStatement pst = conexao.prepareStatement(sql)) {
 
-			pst.setInt(1, situacao);
-			pst.setString(2, dataInicial);
-			pst.setString(3, dataFinal);
+			pst.setString(1, dataInicial);
+			pst.setString(2, dataFinal);
 
 			try (ResultSet rs = pst.executeQuery()) {
 
 				while (rs.next()) {
 
-					Carga c = new Carga();
+					CargaDms c = new CargaDms();
 					Route route = new Route();
-					Vehicle vehicle = new Vehicle();
 
-					c.setResponsibleId(rs.getString("CODMOTO"));
-					c.setResponsibleName(rs.getString("APELIDO"));
 					c.setReferenceId(rs.getString("CARGA"));
 					route.setId(rs.getString("CODROTA"));
 					route.setDescription(rs.getString("NOMEROTA"));
 					c.setRoute(route);
-					vehicle.setId(rs.getString("CODVEICULO"));
-					vehicle.setDescription(rs.getString("VEICULO"));
-					c.setVehicle(vehicle);
 					c.setNote(rs.getString("OBS"));
+					c.setBranchId(rs.getString("CHAVEEMPRESA"));
 					lista.add(c);
 
 				}

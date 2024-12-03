@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.tecgesco.wmscerradoapi.App;
 
 @WebServlet(urlPatterns = { "/api" })
-public class MeuHandler extends HttpServlet {
+public class ApiServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 

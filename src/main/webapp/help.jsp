@@ -4,14 +4,25 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Documenta√ß√£o da API</title>
+	<title>DocumentaÁ„o da API</title>
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
 	<div class="container mt-5">
-		<h1 class="text-center mb-4">Documenta√ß√£o da API</h1>
+		
+		<h1 class="text-center mb-4">DocumentaÁ„o da API</h1>
+		
+		<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+				<h4>TecGesco Gest„o - API WMS Cerrado Vers„o 1.1.0</h4>
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">⁄ltima atualizaÁ„o: 02/12/2024</small>
+			</div>
+		</div>
+		
 
 		<!-- Buscar produto por ID (codigo) -->
 		<div class="card mb-4">
@@ -20,38 +31,38 @@
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/produto
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna as informa√ß√µes de um produto com
-					base no c√≥digo fornecido.
+					<strong>DescriÁ„o:</strong> Retorna as informaÁıes de um produto com
+					base no cÛdigo fornecido.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td><code>id</code></td>
 							<td>Integer</td>
-							<td>Informar o c√≥digo do produto no CH ERP.</td>
+							<td>Informar o cÛdigo do produto no CH ERP.</td>
 							<td>Sim</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 </pre>
@@ -81,19 +92,19 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarprodutos
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista de produtos. Nessa
-					lista ser√° retornada somente produtos ativos, com tipo Revenda ou
-					Acabado e que tenha c√≥digo de barras informado no cadastro.
+					<strong>DescriÁ„o:</strong> Retorna uma lista de produtos. Nessa
+					lista ser· retornada somente produtos ativos, com tipo Revenda ou
+					Acabado e que tenha cÛdigo de barras informado no cadastro.
 				</p>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 </pre>
@@ -121,29 +132,29 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 		<!-- Listar Ops -->
 		<div class="card mb-4">
 			<div class="card-header bg-primary text-white">
-				<h4>Listar OPs (Ordens de Produ√ß√£o)</h4>
+				<h4>Listar OPs (Ordens de ProduÁ„o)</h4>
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarops
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista de ordens de produ√ß√£o
-					lan√ßadas no sistema.
+					<strong>DescriÁ„o:</strong> Retorna uma lista de ordens de produÁ„o
+					lanÁadas no sistema.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -151,7 +162,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial de lan√ßamento a ser considerada no padr√£o
+								Data incial de lanÁamento a ser considerada no padr„o
 								yyyy-MM-dd
 							</td>
 							<td>Sim</td>
@@ -161,7 +172,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final de lan√ßamento a ser considerada no padr√£o
+								Data final de lanÁamento a ser considerada no padr„o
 								yyyy-MM-dd
 							</td>
 							<td>Sim</td>
@@ -171,7 +182,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 							<td><code>situacao</code></td>
 							<td>Integer</td>
 							<td>
-								C√≥digo da situa√ß√£o da OP sendo 0:aberto 1:finalizada
+								CÛdigo da situaÁ„o da OP sendo 0:aberto 1:finalizada
 								2:estornada
 							</td>
 							<td>Sim</td>
@@ -179,7 +190,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 </pre>
@@ -211,28 +222,28 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 		<!-- Buscar OP por ID (codigo) -->
 		<div class="card mb-4">
 			<div class="card-header bg-primary text-white">
-				<h4>Buscar OP por ID (N¬∞ da Ordem)<h4>
+				<h4>Buscar OP por ID (N∞ da Ordem)<h4>
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/op
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna os dados da ordem de produ√ß√£o filtrada
+					<strong>DescriÁ„o:</strong> Retorna os dados da ordem de produÁ„o filtrada
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -240,14 +251,14 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 							<td><code>id</code></td>
 							<td>Integer</td>
 							<td>
-								Numero da ordem de produ√ß√£o
+								Numero da ordem de produÁ„o
 							</td>
 							<td>Sim</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 </pre>
@@ -279,27 +290,27 @@ GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
+					<strong>DescriÁ„o:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
 					os pedidos
 					associados a ela tenham sido faturados e o registro no TMS >> Fretes ainda esteja com status Aberto
-					al√©m de estar com motorista e veiculo associado.
+					alÈm de estar com motorista e veiculo associado.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -307,7 +318,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial no padr√£o yyyy-MM-dd
+								Data incial no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -316,14 +327,14 @@ GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final no padr√£o yyyy-MM-dd
+								Data final no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
@@ -361,26 +372,26 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-0
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
+					<strong>DescriÁ„o:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
 					os pedidos
 					associados a ela tenham sido faturados e o registro no TMS >> Frete esteja com status Finalizado.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -388,7 +399,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-0
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial no padr√£o yyyy-MM-dd
+								Data incial no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -397,14 +408,14 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-0
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final no padr√£o yyyy-MM-dd
+								Data final no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
@@ -443,26 +454,26 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista todas as ordens de cargas (lote pedido), cujo todos os
+					<strong>DescriÁ„o:</strong> Retorna uma lista todas as ordens de cargas (lote pedido), cujo todos os
 					pedidos
 					associados a ela tenham sido faturados e o registro no TMS >> Frete esteja com status Cancelado.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -470,7 +481,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial no padr√£o yyyy-MM-dd
+								Data incial no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -479,14 +490,14 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final no padr√£o yyyy-MM-dd
+								Data final no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
@@ -523,24 +534,24 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listarnotas
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista com todas as notas faturadas de uma ordem de carga.
+					<strong>DescriÁ„o:</strong> Retorna uma lista com todas as notas faturadas de uma ordem de carga.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -556,7 +567,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 </pre>
@@ -581,7 +592,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 			{
 				"itemNumber": 1,
 				"productCode": "000910",
-				"productName": "MAIK√ÉO FILHOTE CARNE E LEITE 80 GR 40X80",
+				"productName": "MAIK√O FILHOTE CARNE E LEITE 80 GR 40X80",
 				"ean": "17898674132376",
 				"quantity": 2.0,
 				"amountUnit": 12.72,
@@ -591,7 +602,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 			{
 				"itemNumber": 2,
 				"productCode": "000924",
-				"productName": "MAIK√ÉO PREMIUM FORT CARNE ADULTO 80 GR 40X80",
+				"productName": "MAIK√O PREMIUM FORT CARNE ADULTO 80 GR 40X80",
 				"ean": "17898674132383",
 				"quantity": 1.0,
 				"amountUnit": 12.72,
@@ -619,25 +630,25 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/cliente
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna dados de cadastro do cliente recebendo como parametro o CPF ou
+					<strong>DescriÁ„o:</strong> Retorna dados de cadastro do cliente recebendo como parametro o CPF ou
 					CNPJ.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -645,7 +656,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 							<td><code>cnpj</code></td>
 							<td>String</td>
 							<td>
-								Informar o CPF ou CNPJ sem pontos e tra√ßos, ou seja, somente numeros.
+								Informar o CPF ou CNPJ sem pontos e traÁos, ou seja, somente numeros.
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -653,7 +664,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
 GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 </pre>
@@ -687,29 +698,29 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 		<!-- listar-ordens-de-carga -->
 		<div class="card mb-4">
 			<div class="card-header bg-primary text-white">
-				<h4>Listar Ordens de Carga para separa√ß√£o<h4>
+				<h4>Listar Ordens de Carga para separaÁ„o<h4>
 			</div>
 			<div class="card-body">
 				<p>
-					<strong>M√©todo:</strong> <span class="badge bg-success">GET</span>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
 					179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao
 				</p>
 				<p>
-					<strong>Descri√ß√£o:</strong> Retorna uma lista de Ordens de Cargas (Lote pedido saida) cujo todos os
-					pedidos associados esteja com situa√ß√£o de entrega esteja como Confirmado.
+					<strong>DescriÁ„o:</strong> Retorna uma lista de Ordens de Cargas (Lote pedido saida) cujo todos os
+					pedidos associados esteja com situaÁ„o de entrega esteja como Confirmado.
 				</p>
 
-				<h5>Par√¢metros</h5>
+				<h5>Par‚metros</h5>
 				<table class="table table-bordered">
 					<thead class="table-light">
 						<tr>
-							<th>Par√¢metro</th>
+							<th>Par‚metro</th>
 							<th>Tipo</th>
-							<th>Descri√ß√£o</th>
-							<th>Obrigat√≥rio</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -718,7 +729,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial no padr√£o yyyy-MM-dd
+								Data incial no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -727,7 +738,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final no padr√£o yyyy-MM-dd
+								Data final no padr„o yyyy-MM-dd
 							</td>
 							<td>Sim</td>
 						</tr>
@@ -735,9 +746,9 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 					</tbody>
 				</table>
 
-				<h5>Exemplo de Requisi√ß√£o</h5>
+				<h5>Exemplo de RequisiÁ„o</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga?datainicial=2024-12-02&datafinal=2024-12-02
+GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao?datainicial=2024-12-02&datafinal=2024-12-02
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -760,12 +771,77 @@ GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga?datainicial=2024-12-
 		</div>
 
 
-
-
-
+		<!-- listar-itens-ordens-de-carga -->
 		<div class="card mb-4">
-			<div class="card-footer">
-				<small class="text-muted">√öltima atualiza√ß√£o: 02/12/2024</small>
+			<div class="card-header bg-primary text-white">
+				<h4>Listar Itens da Ordem de Carga<h4>
+			</div>
+			<div class="card-body">
+				<p>
+					<strong>MÈtodo:</strong> <span class="badge bg-success">GET</span>
+				</p>
+				<p>
+					<strong>Endpoint:</strong>
+					179.190.0.181:8093/WMSCerradoApi/itens-carga
+				</p>
+				<p>
+					<strong>DescriÁ„o:</strong> Retorna uma lista agrupada de itens da ordem cargas (Lote pedido saida).
+				</p>
+
+				<h5>Par‚metros</h5>
+				<table class="table table-bordered">
+					<thead class="table-light">
+						<tr>
+							<th>Par‚metro</th>
+							<th>Tipo</th>
+							<th>DescriÁ„o</th>
+							<th>ObrigatÛrio</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr>
+							<td><code>carga</code></td>
+							<td>String</td>
+							<td>
+								CÛdigo da carga/lote pedido
+							</td>
+							<td>Sim</td>
+						</tr>
+
+						<tr>
+							<td><code>empresa</code></td>
+							<td>Int</td>
+							<td>
+								CÛdido da empresa
+							</td>
+							<td>Sim</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<h5>Exemplo de RequisiÁ„o</h5>
+				<pre class="bg-light p-3 border rounded">
+GET 179.190.0.181:8093/WMSCerradoApi/itens-carga?carga=2&empresa=4
+</pre>
+
+				<h5>Exemplo de Resposta</h5>
+				<pre class="bg-light p-3 border rounded">
+
+[
+	{
+		"productCode": "000171",
+		"quantity": 3.0,
+		"loadOrderId": "000002"
+	},
+	{
+		"productCode": "000178",
+		"quantity": 1.0,
+		"loadOrderId": "000002"
+	}
+]
+</pre>
 			</div>
 		</div>
 

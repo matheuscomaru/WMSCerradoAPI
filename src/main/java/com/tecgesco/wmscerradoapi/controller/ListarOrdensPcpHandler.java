@@ -33,6 +33,7 @@ public class ListarOrdensPcpHandler extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		App.context = request.getServletContext();
+
 		String datainicial = request.getParameter("datainicial");
 		String datafinal = request.getParameter("datafinal");
 		String situacao = request.getParameter("situacao");

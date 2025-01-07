@@ -18,8 +18,13 @@
 		<div class="card-header bg-primary text-white">
 				<h4>TecGesco Gestão - API WMS Cerrado Versão 1.1.0</h4>
 			</div>
+			<div class="card-body">
+				<p>
+					Nos Enpoints, pode estar usando o DNS <strong>chsistemas251.eunanuvem.com.br</strong> no lugar do IP <strong>179.190.0.182</strong>
+				</p>
+				</div>
 			<div class="card-footer">
-				<small class="text-muted">Última atualização: 02/12/2024</small>
+				<small class="text-muted">Última atualização: 07/01/2025</small>
 			</div>
 		</div>
 		
@@ -35,7 +40,7 @@
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/produto
+					179.190.0.182:8093/WMSCerradoApi/produto
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna as informações de um produto com
@@ -64,7 +69,7 @@
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
+GET 179.190.0.182:8093/WMSCerradoApi/produto?id=103
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -96,7 +101,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarprodutos
+					179.190.0.182:8093/WMSCerradoApi/listarprodutos
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista de produtos. Nessa
@@ -106,7 +111,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
+GET 179.190.0.182:8093/WMSCerradoApi/listarprodutos
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -140,7 +145,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarops
+					179.190.0.182:8093/WMSCerradoApi/listarops
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista de ordens de produção
@@ -162,7 +167,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 							<td><code>datainicial</code></td>
 							<td>String</td>
 							<td>
-								Data incial de lançamento a ser considerada no padrão
+								Será considerada data de lançamento se a situação for 0:aberta e data de fechamento se a situação for 1:finalizada ou 2:estornada. A Data deve estar no padrão
 								yyyy-MM-dd
 							</td>
 							<td>Sim</td>
@@ -172,7 +177,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 							<td><code>datafinal</code></td>
 							<td>String</td>
 							<td>
-								Data final de lançamento a ser considerada no padrão
+								Será considerada data de lançamento se a situação for 0:aberta e data de fechamento se a situação for 1:finalizada ou 2:estornada. A Data deve estar no padrão
 								yyyy-MM-dd
 							</td>
 							<td>Sim</td>
@@ -192,7 +197,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarprodutos
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
+GET 179.190.0.182:8093/WMSCerradoApi/produto?id=103
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -230,7 +235,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/op
+					179.190.0.182:8093/WMSCerradoApi/op
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna os dados da ordem de produção filtrada
@@ -260,7 +265,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/produto?id=103
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
+GET 179.190.0.182:8093/WMSCerradoApi/op?id=506
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -294,7 +299,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas
+					179.190.0.182:8093/WMSCerradoApi/listarcargasfaturadas
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
@@ -336,7 +341,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/op?id=506
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-01&datafinal=2024-12-02
+GET 179.190.0.182:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -376,7 +381,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-0
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas
+					179.190.0.182:8093/WMSCerradoApi/listarcargasfinalizadas
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista de todas as ordens de cargas (lote pedido), cujo todos
@@ -417,7 +422,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfaturadas?datainicial=2024-12-0
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12-01&datafinal=2024-12-02
+GET 179.190.0.182:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -458,7 +463,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas
+					179.190.0.182:8093/WMSCerradoApi/listarcargascanceladas
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista todas as ordens de cargas (lote pedido), cujo todos os
@@ -499,7 +504,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargasfinalizadas?datainicial=2024-12
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-01&datafinal=2024-12-02
+GET 179.190.0.182:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-01&datafinal=2024-12-02
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -538,7 +543,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listarnotas
+					179.190.0.182:8093/WMSCerradoApi/listarnotas
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista com todas as notas faturadas de uma ordem de carga.
@@ -569,7 +574,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarcargascanceladas?datainicial=2024-12-
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
+GET 179.190.0.182:8093/WMSCerradoApi/listarnotas?id=233736
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -634,7 +639,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/cliente
+					179.190.0.182:8093/WMSCerradoApi/cliente
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna dados de cadastro do cliente recebendo como parametro o CPF ou
@@ -666,7 +671,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listarnotas?id=233736
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
+GET 179.190.0.182:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -706,7 +711,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao
+					179.190.0.182:8093/WMSCerradoApi/listar-ordens-de-carga-separacao
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista de Ordens de Cargas (Lote pedido saida) cujo todos os
@@ -748,7 +753,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/cliente?cnpj=31178921000172
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao?datainicial=2024-12-02&datafinal=2024-12-02
+GET 179.190.0.182:8093/WMSCerradoApi/listar-ordens-de-carga-separacao?datainicial=2024-12-02&datafinal=2024-12-02
 </pre>
 
 				<h5>Exemplo de Resposta</h5>
@@ -782,7 +787,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao?datainicia
 				</p>
 				<p>
 					<strong>Endpoint:</strong>
-					179.190.0.181:8093/WMSCerradoApi/itens-carga
+					179.190.0.182:8093/WMSCerradoApi/itens-carga
 				</p>
 				<p>
 					<strong>Descrição:</strong> Retorna uma lista agrupada de itens da ordem cargas (Lote pedido saida).
@@ -823,7 +828,7 @@ GET 179.190.0.181:8093/WMSCerradoApi/listar-ordens-de-carga-separacao?datainicia
 
 				<h5>Exemplo de Requisição</h5>
 				<pre class="bg-light p-3 border rounded">
-GET 179.190.0.181:8093/WMSCerradoApi/itens-carga?carga=2&empresa=4
+GET 179.190.0.182:8093/WMSCerradoApi/itens-carga?carga=2&empresa=4
 </pre>
 
 				<h5>Exemplo de Resposta</h5>

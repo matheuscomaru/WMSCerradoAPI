@@ -35,15 +35,18 @@ public class OrdemProducaoDao {
 				+ "AND IPCP.ATIVO=1 \r\n"
 				+ "AND IPCP.TIPO = 1\r\n"
 				+ "AND L.CHAVEEMPRESA = 1 \r\n"
-				+ "AND L.DATALANC BETWEEN ? AND ? \r\n"
+				+ "AND ((L.SITUACAO = 0 AND L.DATALANC BETWEEN ? AND ?)\r\n"
+				+ "OR L.DATAFECHADO BETWEEN ? AND ? AND L.SITUACAO IN (1,2)) \r\n"
 				+ "AND L.SITUACAO = ?\r\n"
-				+ "ORDER BY IPCP.CHAVELANCORDEMPROD DESC";
+				+ "ORDER BY IPCP.CHAVELANCORDEMPROD DESC;";
 		//@formatter:on
 		try (Connection conexao = ModuloConexao.conector(); PreparedStatement pst = conexao.prepareStatement(sql)) {
 
 			pst.setString(1, datainicial);
 			pst.setString(2, datafinal);
-			pst.setInt(3, situacao);
+			pst.setString(3, datainicial);
+			pst.setString(4, datafinal);
+			pst.setInt(5, situacao);
 
 			try (ResultSet rs = pst.executeQuery();) {
 

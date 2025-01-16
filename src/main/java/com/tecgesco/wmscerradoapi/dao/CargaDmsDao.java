@@ -19,7 +19,7 @@ public class CargaDmsDao {
 		ArrayList<CargaDms> lista = new ArrayList<>();
 
 		// @formatter:off
-		String sql = "SELECT TMS.CODIGO AS CARGA , TMS.CHAVEEMPRESA,\r\n"
+		String sql = "SELECT DISTINCT TMS.CODIGO AS CARGA , TMS.CHAVEEMPRESA,\r\n"
 				+ "COALESCE(ZZ.CODROTA,'000000') AS CODROTA,\r\n"
 				+ "COALESCE(ZZ.ROTA,'SEM ROTA') AS NOMEROTA, \r\n"
 				+ "COALESCE(TMS.OBS,'') AS OBS\r\n"
